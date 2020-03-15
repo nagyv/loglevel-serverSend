@@ -24,8 +24,8 @@ var loglevelServerSend = function(logger,options) {
         _sendQueue       = [],
         _isSending       = false
     
-    _logger.methodFactory = function (methodName, logLevel) {
-        var rawMethod = _originalFactory(methodName, logLevel)
+    _logger.methodFactory = function (methodName, logLevel, loggerName) {
+        var rawMethod = _originalFactory(methodName, logLevel, loggerName)
     
         return function (message) {
             if (typeof _prefix === 'string')
